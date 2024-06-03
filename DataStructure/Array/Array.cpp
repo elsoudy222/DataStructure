@@ -3,14 +3,14 @@
 using namespace std;
 
 
-class ArrayDemo{
+class ArrayDemo0{
 private:
     int size;
     int length;
     int* items;
     
 public:
-    ArrayDemo(int newArrSize){
+    ArrayDemo0(int newArrSize){
         size = newArrSize;
         length = 0;
         items = new int[newArrSize];
@@ -39,7 +39,8 @@ public:
         }
         cout<<endl;
     };
-
+    
+  
 };
 
 
