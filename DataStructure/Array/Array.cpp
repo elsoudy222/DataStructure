@@ -1,6 +1,7 @@
+#include "Array.hpp"
 #include <iostream>
-
 using namespace std;
+
 
 class ArrayDemo{
 private:
@@ -24,7 +25,7 @@ public:
             return;
         }else{
             for (int i =0; i < num_of_items; i++) {
-                cout<<"Enter Item Number "<< i <<" : ";
+                cout<<"Enter Item Number "<< i << endl;
                 cin>> items[i];
                 length++;
             }
@@ -37,30 +38,8 @@ public:
             cout<< items[i] << "    ";
         }
         cout<<endl;
-    }
-    
-    int getSize(){
-        return  size;
-    }
-    int getLength(){
-        return length;
-    }
-    
+    };
+
 };
 
 
-
-
-int main() {
-    int arrSize;
-    cout<<"ARRAY ADT DEMO !!"<<endl;
-    cout<<"Enter Array Size: ";
-    cin>>arrSize;
-    ArrayDemo myArray(arrSize);
-    myArray.Fill();
-    myArray.Display();
-    myArray.getSize();
-    myArray.getLength();
-    
-    return 0;
-}
