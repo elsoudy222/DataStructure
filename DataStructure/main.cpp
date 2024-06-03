@@ -5,6 +5,7 @@ class Array{
 private:
     int size;
     int length;
+    int width;
     
 };
 
