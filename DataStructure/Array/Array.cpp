@@ -1,15 +1,16 @@
+
 #include <stdio.h>
 #include <iostream>
 using namespace std;
 
-class ArrayDemo{
+class Array{
 private:
     int size;
     int length;
     int* items;
     
 public:
-    ArrayDemo(int newArrSize){
+    Array(int newArrSize){
         size = newArrSize;
         length = 0;
         items = new int[newArrSize];
@@ -112,7 +113,7 @@ public:
     }
 //======================= (Merge) ==========================//
 
-    void Merge(ArrayDemo other){
+    void Merge(Array other){
         int newSize = size + other.getSize();
         size = newSize;
         int* oldArray = items;

@@ -1,5 +1,5 @@
 #include <iostream>
-#include "array_demo/array_demo.cpp"
+#include "Array/Array.cpp"
 using namespace std;
 
 
@@ -13,7 +13,7 @@ int main() {
     cout<<"ARRAY ADT DEMO !!"<<endl;
     cout<<"Enter Array Size: ";
     cin>> newArrSize;
-    ArrayDemo myArray(newArrSize);
+    Array myArray(newArrSize);
     myArray.Fill();
     cout<<"Array Size = "<< myArray.getSize()<<"\t\t"<<"Array Length = "<<myArray.getLength()<<endl;
     myArray.Display();
@@ -64,7 +64,7 @@ int main() {
 //    myArray.Display();
     cout<<"=================================================\n";
     //======================= (Merge) ==========================//
-    ArrayDemo other(3);
+    Array other(3);
     other.Fill();
     myArray.Merge(other);
     cout<<"(Array Size) = "<< myArray.getSize()<<"\t\t"<<"(Array Length) = "<<myArray.getLength()<<endl;
