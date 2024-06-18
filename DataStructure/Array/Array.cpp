@@ -126,6 +126,7 @@ public:
         
         int j = i;
         for (int i = 0; i < other.getLength(); i++) {
+            
             items[j++] = other.items[i];
             length++;
         }
