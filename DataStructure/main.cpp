@@ -1,11 +1,51 @@
 #include <iostream>
-//#include "Array/Array.cpp"
 #include "Linked_List/Linked_List.cpp"
 using namespace std;
 
 /// ==================== Linked List Implementation:- ===============================
 int main (){
    
+    LinkedList list;
+    
+    if (list.isEmpty()) {
+        cout<<"The List is Empty.\n";
+    }else{
+        cout<<"The List Contains : "<< list.counter()<<endl;
+    }
+    int item;
+    cout<<"Enter Item to isert in the list: ";
+    cin>>item;
+    list.insertFirst(item);
+    list.display();
+    cout<<"\nEnter Item to isert in the list: ";
+    cin>>item;
+    list.insertFirst(item);
+    list.display();
+    cout<<"\nEnter Item to isert in the list: ";
+    cin>>item;
+    list.insertFirst(item);
+    list.display();
+    cout<<"\nEnter Item to isert in the list: ";
+    cin>>item;
+    list.insertFirst(item);
+    list.display();
+    
+    //cout<<"\nEnter Item to Search in the list: ";
+//    cin>>item;
+//    if (list.isFound(item)) {
+//        cout <<"true";
+//    }else{
+//        cout <<"false";
+//    }
+    
+    cout<<"\nEnter Item and Value to Insert in the list: \n";
+    int value;
+    cin>> item;
+    cin>> value;
+    list.insertBefor(item, value);
+    list.display();
+    
+    
     
     
     return 0;
