@@ -47,6 +47,7 @@ public:
             cout<< temp->data << "  ";
             temp = temp->next;
         }
+        cout<<endl;
     }
 //======================= (Counter) ==========================//
         
@@ -88,6 +89,47 @@ public:
              temp->next = newNode;
         }else{
             cout<<"Sorry, The item is not found. \n";
+        }
+    }
+    //======================= (Append) ==========================//
+    void Append(int newValue){
+        
+        if (isEmpty()) {
+            insertFirst(newValue);
+        }else{
+            Node* temp = head;
+            while (temp->next != NULL) {
+                temp = temp->next;
+            }
+            Node* newNode = new Node(); // Create New Node.
+            newNode->data = newValue;   // Initialize the New Node Data with newValue Enterd.
+            temp->next = newNode;       // Meke the (temp->next) pointer point to the New Node.
+            newNode->next = NULL;       // Make (newNode->next) point to NULL , Because its the last node in the list.
+        }
+    }
+    //======================= (Delete) ==========================//
+    void Delete(int item){
+        
+        if (isEmpty()) {
+            cout<<"Sorry, The List is Empty , No Items to Delete.\n";
+        }else if (isFound(item) == false) {
+            cout<<"Sorry, The Item Not Founded.\n";
+            return;
+        }
+        Node* deletePtr = head;
+        if(head -> data == item){
+           // Node* delPtr = head;
+            head = head->next;
+            delete deletePtr;
+        }else{
+            
+            Node* prevPtr = NULL; 
+            while (deletePtr -> data != item) {
+                prevPtr = deletePtr;
+                deletePtr = deletePtr -> next;
+            }
+            prevPtr -> next = deletePtr -> next;
+            delete deletePtr;
         }
     }
 };
