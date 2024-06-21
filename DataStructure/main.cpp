@@ -1,70 +1,100 @@
 #include <iostream>
 #include "Linked_List/Linked_List.cpp"
+#include "Stack/Stack.cpp"
 using namespace std;
 
-/// ==================== Linked List Implementation:- ===============================
-int main (){
-   
-    LinkedList list;
+int main(){
     
-    if (list.isEmpty()) {
-        cout<<"The List is Empty.\n";
-    }else{
-        cout<<"The List Contains : "<< list.counter()<<endl;
-    }
+    Stack stack;
+    
+    
+    //==========================(Push)====================================
     int item;
-    cout<<"Enter Item to isert in the list: ";
-    cin>>item;
-    list.insertFirst(item);
-    list.display();
-    cout<<"\nEnter Item to isert in the list: ";
-    cin>>item;
-    list.insertFirst(item);
-    list.display();
-    cout<<"\nEnter Item to isert in the list: ";
-    cin>>item;
-    list.insertFirst(item);
-    list.display();
-    cout<<"\nEnter Item to isert in the list: ";
-    cin>>item;
-    list.insertFirst(item);
-    list.display();
+    for (int i = 0; i<= 4; i++) {
+        cout<<"Please Enter Item ("<< i+1 << ") To Add to Stack : ";
+        cin>> item;
+        stack.push(item);
+        stack.display();
+        
+      }
+    cout<< "There is "<<stack.Count()<<" Items in the stack\n";
+    cout<<"====================================================\n";
     
-    //cout<<"\nEnter Item to Search in the list: ";
+    //==========================( Pop )====================================
+//    cout<< "Item "<<stack.pop()<<" Was Deleted Successfully.\n";
+//    stack.display();
+//    cout<< "There is "<<stack.Count()<<" Items in the stack\n";
+    cout<<"====================================================\n";
+    //==========================( Peek )====================================
+    cout<<"Top Item = "<< stack.peek()<<endl;
+    //==========================( Is Found )====================================
+    cout<<"Enter Item to search: ";
+    cin>>item;
+    if (stack.isFound(item) == true) {
+        cout<<"Item Founded.\n";
+    }else{
+        cout<<"Item Not Founded.\n";
+    }
+    
+    
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+/// ==================== Linked List Implementation:- ===============================
+//int main (){
+//
+//    LinkedList list;
+//
+//    if (list.isEmpty()) {
+//        cout<<"The List is Empty.\n";
+//    }else{
+//        cout<<"The List Contains : "<< list.counter()<<endl;
+//    }
+//    cout<<"====================================================\n";
+//    // ==================== Insert First ===============================
+//    int item;
+//    for (int i = 0; i<= 4; i++) {
+//        cout<<"Enter Item (" << i+1 <<") to isert in the list: ";
+//        cin>>item;
+//        list.insertFirst(item);
+//        list.display();
+//    }
+//    cout<<"====================================================\n";
+//    // ==================== Search ===============================
+//    cout<<"\nEnter Item to Search in the list: ";
 //    cin>>item;
 //    if (list.isFound(item)) {
 //        cout <<"true";
 //    }else{
 //        cout <<"false";
 //    }
-    
-    cout<<"\nEnter Item and Value to Insert in the list: \n";
-    int value;
-    cin>> item;
-    cin>> value;
-    list.insertBefor(item, value);
-    list.display();
-    
-    
-    
-    
-    return 0;
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//    cout<<"====================================================\n";
+//    // ==================== Insert Before ===============================
+//    cout<<"Enter Item And Value to Insert in the list: \n";
+//    int value;
+//    cin>> item;
+//    cin>> value;
+//    list.insertBefor(item, value);
+//    list.display();
+//    cout<<"====================================================\n";
+//    // ==================== Delete ===============================
+//    cout<<"Enter Item to Delete from the list: ";
+//    int deletedItem;
+//    cin >> deletedItem;
+//    list.Delete(deletedItem);
+//    list.display();
+//
+//    return 0;
+//};
 
 
 
