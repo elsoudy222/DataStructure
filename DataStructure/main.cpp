@@ -1,44 +1,78 @@
 #include <iostream>
 #include "Linked_List/Linked_List.cpp"
-#include "Stack/Stack.cpp"
+#include "Queue/Queue.cpp"
+
+
 using namespace std;
 
+
+
+
+
+
 int main(){
-    
-    Stack stack;
-    
-    
-    //==========================(Push)====================================
+    Queue queue;
     int item;
-    for (int i = 0; i<= 4; i++) {
-        cout<<"Please Enter Item ("<< i+1 << ") To Add to Stack : ";
-        cin>> item;
-        stack.push(item);
-        stack.display();
-        
-      }
-    cout<< "There is "<<stack.Count()<<" Items in the stack\n";
-    cout<<"====================================================\n";
+        for (int i = 0; i<= 4; i++) {
+            cout<<"Please Enter Item ("<< i+1 << ") To Add to Stack : ";
+            cin>> item;
+            queue.Enqueue(item);
+         }
+    queue.Display();
     
-    //==========================( Pop )====================================
-//    cout<< "Item "<<stack.pop()<<" Was Deleted Successfully.\n";
-//    stack.display();
-//    cout<< "There is "<<stack.Count()<<" Items in the stack\n";
-    cout<<"====================================================\n";
-    //==========================( Peek )====================================
-    cout<<"Top Item = "<< stack.peek()<<endl;
-    //==========================( Is Found )====================================
-    cout<<"Enter Item to search: ";
-    cin>>item;
-    if (stack.isFound(item) == true) {
-        cout<<"Item Founded.\n";
-    }else{
-        cout<<"Item Not Founded.\n";
-    }
+//    queue.Dequeue();
+//    queue.Display();
+//    queue.Dequeue();
+//    queue.Display();
+    
+    cout<<"Clear All Items : \n";
+    queue.Clear();
+    cout<<"Display After Clear: \n";
+    queue.Display();
     
     
     return 0;
 }
+
+
+/// ==================== Stack Implementation:- ===============================
+//int main(){
+//    
+//    Stack stack;
+//    
+//    
+//    //==========================(Push)====================================
+//    int item;
+//    for (int i = 0; i<= 4; i++) {
+//        cout<<"Please Enter Item ("<< i+1 << ") To Add to Stack : ";
+//        cin>> item;
+//        stack.push(item);
+//        stack.display();
+//        
+//      }
+//    cout<< "There is "<<stack.Count()<<" Items in the stack\n";
+//    cout<<"====================================================\n";
+//    
+////==========================( Pop )====================================
+//    
+////    cout<< "Item "<<stack.pop()<<" Was Deleted Successfully.\n";
+////    stack.display();
+////    cout<< "There is "<<stack.Count()<<" Items in the stack\n";
+//    cout<<"====================================================\n";
+//    //==========================( Peek )====================================
+//    cout<<"Top Item = "<< stack.peek()<<endl;
+//    //==========================( Is Found )====================================
+//    cout<<"Enter Item to search: ";
+//    cin>>item;
+//    if (stack.isFound(item) == true) {
+//        cout<<"Item Founded.\n";
+//    }else{
+//        cout<<"Item Not Founded.\n";
+//    }
+//    
+//    
+//    return 0;
+//}
 
 
 
