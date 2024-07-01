@@ -22,12 +22,12 @@ int main(){
     cout<< "Display The Tree Content In PreOrder:\n";
     BSTree.PreOrder(BSTree.root);
     cout<<"\n=============================================== \n";
-    cout<< "Display The Tree Content In InOrder:\n";
-    BSTree.InOrder(BSTree.root);
-    cout<<"\n=============================================== \n";
-    cout<< "Display The Tree Content In PostOrder:\n";
-    BSTree.PostOrder(BSTree.root);
-    cout<<"\n=============================================== \n";
+//    cout<< "Display The Tree Content In InOrder:\n";
+//    BSTree.InOrder(BSTree.root);
+//    cout<<"\n=============================================== \n";
+//    cout<< "Display The Tree Content In PostOrder:\n";
+//    BSTree.PostOrder(BSTree.root);
+//    cout<<"\n=============================================== \n";
 //    int key;
 //    cout<< "Enter Item To Search For :";
 //    cin>> key;
@@ -36,22 +36,30 @@ int main(){
 //    }else{
 //        cout<<"Item Not Found.\n";
 //    }
-    cout<<"Find Minimum Number in the Tree\n";
-    TreeNode* min = BSTree.FindMin(BSTree.root);
-    if (min == 0) {
-        cout<<"Sorry, No Item Exist\n";
-    }else{
-        cout<<"Minimum Number = "<<min->data<<endl;
-    } 
-    cout<<"Find Maximum Number in the Tree\n";
+//    cout<<"Find Minimum Number in the Tree\n";
+//    TreeNode* min = BSTree.FindMin(BSTree.root);
+//    if (min == 0) {
+//        cout<<"Sorry, No Item Exist\n";
+//    }else{
+//        cout<<"Minimum Number = "<<min->data<<endl;
+//    } 
+//    cout<<"Find Maximum Number in the Tree\n";
+//    
+//    TreeNode* max = BSTree.FindMax(BSTree.root);
+//    if (max == 0) {
+//        cout<<"Sorry, No Item Exist\n";
+//    }else{
+//        cout<<"Minimum Number = "<<max->data<<endl;
+//    }
     
-    TreeNode* max = BSTree.FindMax(BSTree.root);
-    if (max == 0) {
-        cout<<"Sorry, No Item Exist\n";
-    }else{
-        cout<<"Minimum Number = "<<max->data<<endl;
-    }
-    
+    cout << "\n Delete Items \n ";
+    TreeNode *result = BSTree.Delete (BSTree.root, 12);
+    cout << "\npreorder After Delete 12 \n ";
+    BSTree.PreOrder(result);
+    result = BSTree.Delete(BSTree.root, 15);
+    cout << "\npreorder After Delete 15 \n ";
+    BSTree.PreOrder(result);
+    cout<<endl;
     return 0;
 }
 

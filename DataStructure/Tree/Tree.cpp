@@ -115,4 +115,43 @@ public:
             return FindMax(r->right );
         }
     }
+    //======================= () ==========================//
+    
+    TreeNode* Delete(TreeNode* r , int key){
+        if (r == NULL) {
+            return 0;
+        }
+        if (key < r->data){
+           r->left = Delete(r->left, key);
+        }else if (key > r->data){
+           r->right = Delete(r->right, key);
+        }else{
+            //1- Leaf Node.
+            if (r->left == NULL && r->right == NULL) {
+                r = NULL;
+            }
+            //2- has only one child in the left
+            else if (r->left != NULL && r->right == NULL){
+                r->data = r->left->data;
+                delete r->left;
+                r->left = NULL;
+            }
+            //2- has only one child in the right
+            else if (r->left == NULL && r->right != NULL){
+                r->data = r->right->data;
+                delete r->right;
+                r->right = NULL;
+            }else{
+//======================= Another Implementation:=============================
+//                r->data = FindMax(r->left)->data;
+//                Delete(r->left, FindMax(r->left)->data);
+                
+                TreeNode* max =FindMax(r->left);
+                r->data = max->data;
+                Delete(r->left, max->data);
+            }
+        }
+        
+        return r ;
+    }
 };
