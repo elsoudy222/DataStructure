@@ -26,6 +26,7 @@ public:
     }
     
     //======================= (isEmpty) ==========================//
+    
     bool isEmpty(){
         if (front == NULL) {
             return  true;

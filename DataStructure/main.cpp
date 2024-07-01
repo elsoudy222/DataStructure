@@ -1,38 +1,85 @@
 #include <iostream>
 #include "Linked_List/Linked_List.cpp"
 #include "Queue/Queue.cpp"
-
+#include "Tree/Tree.cpp"
 
 using namespace std;
 
-
-
-
-
-
+//45, 15, 79, 90, 10, 55, 12, 20, 50
 int main(){
-    Queue queue;
-    int item;
-        for (int i = 0; i<= 4; i++) {
-            cout<<"Please Enter Item ("<< i+1 << ") To Add to Stack : ";
-            cin>> item;
-            queue.Enqueue(item);
-         }
-    queue.Display();
+    BST BSTree;
     
-//    queue.Dequeue();
-//    queue.Display();
-//    queue.Dequeue();
-//    queue.Display();
+    BSTree.Insert(45);
+    BSTree.Insert(15);
+    BSTree.Insert(79);
+    BSTree.Insert(90);
+    BSTree.Insert(10);
+    BSTree.Insert(55);
+    BSTree.Insert(12);
+    BSTree.Insert(20);
+    BSTree.Insert(50);
     
-    cout<<"Clear All Items : \n";
-    queue.Clear();
-    cout<<"Display After Clear: \n";
-    queue.Display();
+    cout<< "Display The Tree Content In PreOrder:\n";
+    BSTree.PreOrder(BSTree.root);
+    cout<<"\n=============================================== \n";
+    cout<< "Display The Tree Content In InOrder:\n";
+    BSTree.InOrder(BSTree.root);
+    cout<<"\n=============================================== \n";
+    cout<< "Display The Tree Content In PostOrder:\n";
+    BSTree.PostOrder(BSTree.root);
+    cout<<"\n=============================================== \n";
+//    int key;
+//    cout<< "Enter Item To Search For :";
+//    cin>> key;
+//    if (BSTree.Search(key)) {
+//        cout<<"Item Founded Successfully.\n";
+//    }else{
+//        cout<<"Item Not Found.\n";
+//    }
+    cout<<"Find Minimum Number in the Tree\n";
+    TreeNode* min = BSTree.FindMin(BSTree.root);
+    if (min == 0) {
+        cout<<"Sorry, No Item Exist\n";
+    }else{
+        cout<<"Minimum Number = "<<min->data<<endl;
+    } 
+    cout<<"Find Maximum Number in the Tree\n";
     
+    TreeNode* max = BSTree.FindMax(BSTree.root);
+    if (max == 0) {
+        cout<<"Sorry, No Item Exist\n";
+    }else{
+        cout<<"Minimum Number = "<<max->data<<endl;
+    }
     
     return 0;
 }
+
+
+
+//int main(){
+//    Queue queue;
+//    int item;
+//        for (int i = 0; i<= 4; i++) {
+//            cout<<"Please Enter Item ("<< i+1 << ") To Add to Stack : ";
+//            cin>> item;
+//            queue.Enqueue(item);
+//         }
+//    queue.Display();
+//    
+////    queue.Dequeue();
+////    queue.Display();
+////    queue.Dequeue();
+////    queue.Display();
+//    
+//    cout<<"Clear All Items : \n";
+//    queue.Clear();
+//    cout<<"Display After Clear: \n";
+//    queue.Display();
+//    
+//    
+//    return 0;
+//}
 
 
 /// ==================== Stack Implementation:- ===============================
